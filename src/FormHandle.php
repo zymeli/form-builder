@@ -13,7 +13,6 @@
 namespace FormBuilder;
 
 
-use FormBuilder\Annotation\AnnotationReader;
 use FormBuilder\Contract\ConfigInterface;
 use FormBuilder\Contract\FormHandleInterface;
 
@@ -91,8 +90,7 @@ abstract class FormHandle implements FormHandleInterface
      */
     protected function getFormRule()
     {
-        $render = new AnnotationReader($this);
-        return $render->render();
+        throw new \ReflectionException('unrealized');
     }
 
     /**

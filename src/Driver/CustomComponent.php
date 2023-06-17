@@ -94,26 +94,31 @@ class CustomComponent implements CustomComponentInterface, \JsonSerializable, \A
         return $this->appendRule + $this->getRule();
     }
 
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->build();
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return isset($this->props[$offset]);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->props[$offset];
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         $this->props[$offset] = $value;
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->props[$offset]);
